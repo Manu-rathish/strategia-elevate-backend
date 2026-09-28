@@ -26,10 +26,13 @@ class CurrentUser:
         return "manager" in self.elevate_roles
 
 
-def _descendant_ids(unit_id: str) -> set[str]:
-    result = {unit_id}
+def _descendant_ids(unit_id: str, seen: set[str] | None = None) -> set[str]:
+    result = seen or set()
+    if unit_id in result:
+        return result
+    result.add(unit_id)
     for child in store.children_by_parent_id.get(unit_id, []):
-        result.update(_descendant_ids(child["id"]))
+        _descendant_ids(child["id"], result)
     return result
 
 

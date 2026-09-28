@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.errors import register_error_handlers
-from app.routers import employees, me, org_units
+from app.routers import dev, employees, me, org_units, role_anchors, role_profiles
 from app.settings import get_settings
 from app.store import store
 
@@ -18,8 +18,11 @@ api.add_middleware(
 )
 register_error_handlers(api)
 api.include_router(me.router)
+api.include_router(dev.router)
 api.include_router(employees.router)
+api.include_router(role_anchors.router)
 api.include_router(org_units.router)
+api.include_router(role_profiles.router)
 
 
 @api.get("/health", tags=["health"])

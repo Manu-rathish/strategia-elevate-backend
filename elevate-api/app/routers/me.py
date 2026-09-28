@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends
 
+from app.audit import record_access
 from app.auth import CurrentUser, current_user
 from app.errors import ApiError
 from app.schemas import MeRead
@@ -16,7 +17,7 @@ def get_me(user: CurrentUser = Depends(current_user)) -> MeRead:
     if not user.elevate_roles:
         raise ApiError(403, "FORBIDDEN", "No Elevate role permits this request.")
     employee = store.employees_by_id[user.employee_id]
-    return MeRead(
+    result = MeRead(
         user={
             "user_id": user.user_id,
             "display_name": user.display_name,
@@ -28,3 +29,5 @@ def get_me(user: CurrentUser = Depends(current_user)) -> MeRead:
         },
         employee=shape_employee(employee, user),
     )
+    record_access(user, "my_record", employee["id"])
+    return result

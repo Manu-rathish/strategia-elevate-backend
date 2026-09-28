@@ -75,7 +75,9 @@ def shape_employee(employee: Record, user: CurrentUser) -> EmployeeRead:
     if user.is_hr:
         identity = store.auth_user_by_id.get(employee.get("auth_user_id"))
         values["identity"] = (
-            {"state": identity["state"], "email": identity["email"]} if identity else None
+            {"state": identity["state"], "email": identity["email"]}
+            if identity
+            else {"state": "none"}
         )
         values["candidate_assessment_id"] = employee.get("candidate_assessment_id")
     return EmployeeRead(**values)

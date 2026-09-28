@@ -22,6 +22,7 @@ class Store:
         self.user_pillar_roles: list[Record] = _load(seed_dir, "user_pillar_roles.json")
         self.role_anchors: list[Record] = _load(seed_dir, "role_anchors.json")
         profiles = _load(seed_dir, "vjob-role-profiles.json")
+        self.capabilities: list[Record] = profiles["capabilities"]
         self.role_profiles: list[Record] = profiles["role_profiles"]
         self.rebuild_indexes()
 
@@ -49,6 +50,7 @@ class Store:
         self.current_anchor_by_employee_id = {
             row["employee_id"]: row for row in self.role_anchors if row.get("effective_to") is None
         }
+        self.role_anchors_by_employee_id = self._group(self.role_anchors, "employee_id")
         self.role_profile_by_id = {row["id"]: row for row in self.role_profiles}
         self.units_managed_by_user_id = self._group(
             [row for row in self.org_units if row.get("manager_user_id")], "manager_user_id"

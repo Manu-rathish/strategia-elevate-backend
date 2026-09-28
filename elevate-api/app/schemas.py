@@ -31,7 +31,7 @@ class ManagerRead(BaseModel):
 
 class IdentityRead(BaseModel):
     state: str
-    email: str
+    email: str | None = None
 
 
 class EmployeeRead(BaseModel):
@@ -165,3 +165,103 @@ class OrgUnitRead(BaseModel):
 
 class OrgUnitListRead(BaseModel):
     items: list[OrgUnitRead]
+
+
+class DevPersonaRead(BaseModel):
+    username: str
+    display_name: str
+    organization: str
+    elevate_roles: list[str]
+    state: Literal["active", "invited", "disabled"]
+
+
+class DevPersonaListRead(BaseModel):
+    items: list[DevPersonaRead]
+
+
+class CapabilityRead(BaseModel):
+    key: str
+    label: str
+
+
+class RoleProfileCompetencyRead(CapabilityRead):
+    required_level: int
+
+
+class RoleProfileRead(BaseModel):
+    id: str
+    ref: str
+    title: str
+    family: str
+    status: Literal["active", "archived"]
+    scale: dict[str, int | str]
+    competencies: list[RoleProfileCompetencyRead]
+
+
+class RoleProfileListRead(BaseModel):
+    items: list[RoleProfileRead]
+    capabilities: list[CapabilityRead]
+
+
+class RoleAnchorProfileRead(BaseModel):
+    id: str
+    ref: str
+    title: str
+    family: str
+    status: Literal["active", "archived"]
+
+
+class RoleAnchorHistoryRead(BaseModel):
+    id: str
+    effective_from: date
+    effective_to: date | None
+    role_profile: RoleAnchorProfileRead
+    assigned_by: ManagerRead
+    reason: str
+    created_at: str
+
+
+class RoleAnchorListRead(BaseModel):
+    items: list[RoleAnchorHistoryRead]
+
+
+class RoleAnchorWrite(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    role_profile_id: str
+    effective_from: date
+    reason: str | None = None
+
+
+class OrgUnitCreate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    name: str = Field(min_length=1)
+    kind: Literal["department", "team"]
+    parent_id: str | None
+    manager_user_id: str | None = None
+
+
+class OrgUnitUpdate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    name: str | None = Field(default=None, min_length=1)
+    parent_id: str | None = None
+    manager_user_id: str | None = None
+    is_active: bool | None = None
+
+    @model_validator(mode="after")
+    def reject_null_required_values(self) -> "OrgUnitUpdate":
+        invalid = [
+            field
+            for field in self.model_fields_set - {"parent_id", "manager_user_id"}
+            if getattr(self, field) is None
+        ]
+        if invalid:
+            raise ValueError(f"Fields may not be null: {', '.join(sorted(invalid))}")
+        return self
+
+
+class OrgUnitWriteRead(BaseModel):
+    unit: OrgUnitRead
+    employees_affected: int

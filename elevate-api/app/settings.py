@@ -13,6 +13,8 @@ class Settings(BaseSettings):
         default_factory=lambda: ["http://localhost:3000"]
     )
     default_dev_user: str = "jenny.marsh"
+    dev_endpoints: bool = True
+    employee_repository: str = "seed"
     seed_dir: Path = Path("seed")
 
     @field_validator("cors_origins", mode="before")

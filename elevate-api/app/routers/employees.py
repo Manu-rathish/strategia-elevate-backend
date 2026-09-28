@@ -5,6 +5,7 @@ from uuid import uuid4
 
 from fastapi import APIRouter, Depends, Query, status
 
+from app.audit import record_access
 from app.auth import CurrentUser, current_user
 from app.errors import ApiError
 from app.schemas import (
@@ -97,20 +98,13 @@ def list_employees(
     page_size: int = Query(25, ge=1, le=100),
     user: CurrentUser = Depends(current_user),
 ) -> EmployeeListRead:
-    visible = visible_employees(user)
-    summary = {
-        state: sum(row["status"] == state for row in visible)
-        for state in ("active", "on_leave", "exited")
-    }
-    summary["total"] = len(visible)
-
     selected_statuses = _parse_statuses(status_filter)
-    filtered = [row for row in visible if row["status"] in selected_statuses]
+    scoped = visible_employees(user)
     if q and len(q.strip()) >= 2:
         needle = q.strip().casefold()
-        filtered = [
+        scoped = [
             row
-            for row in filtered
+            for row in scoped
             if any(
                 needle in str(row[field]).casefold()
                 for field in ("first_name", "last_name", "work_email", "employee_number")
@@ -118,7 +112,14 @@ def list_employees(
         ]
     if org_unit_id:
         unit_ids = _unit_filter_ids(org_unit_id, user)
-        filtered = [row for row in filtered if row["org_unit_id"] in unit_ids]
+        scoped = [row for row in scoped if row["org_unit_id"] in unit_ids]
+
+    summary = {
+        state: sum(row["status"] == state for row in scoped)
+        for state in ("active", "on_leave", "exited")
+    }
+    summary["total"] = len(scoped)
+    filtered = [row for row in scoped if row["status"] in selected_statuses]
 
     if sort == "name":
         key = lambda row: (row["last_name"].casefold(), row["first_name"].casefold())
@@ -131,7 +132,7 @@ def list_employees(
     total = len(filtered)
     start = (page - 1) * page_size
     items = [shape_employee(row, user) for row in filtered[start : start + page_size]]
-    return EmployeeListRead(
+    result = EmployeeListRead(
         items=items,
         pagination={
             "page": page,
@@ -141,11 +142,16 @@ def list_employees(
         },
         summary=summary,
     )
+    record_access(user, "employee_list")
+    return result
 
 
 @router.get("/{employee_id}", response_model=EmployeeRead, response_model_exclude_unset=True)
 def get_employee(employee_id: str, user: CurrentUser = Depends(current_user)) -> EmployeeRead:
-    return shape_employee(get_visible_employee(employee_id, user), user)
+    employee = get_visible_employee(employee_id, user)
+    result = shape_employee(employee, user)
+    record_access(user, "employee_detail", employee["id"])
+    return result
 
 
 @router.post(

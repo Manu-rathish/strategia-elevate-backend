@@ -54,6 +54,27 @@
         }
       }
     },
+    "/api/dev/personas": {
+      "get": {
+        "tags": [
+          "development"
+        ],
+        "summary": "List Personas",
+        "operationId": "list_personas_api_dev_personas_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DevPersonaListRead"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/employees": {
       "get": {
         "tags": [
@@ -446,6 +467,132 @@
         }
       }
     },
+    "/api/employees/{employee_id}/role_anchors": {
+      "get": {
+        "tags": [
+          "role anchors"
+        ],
+        "summary": "List Role Anchors",
+        "operationId": "list_role_anchors_api_employees__employee_id__role_anchors_get",
+        "parameters": [
+          {
+            "name": "employee_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Employee Id"
+            }
+          },
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleAnchorListRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/employees/{employee_id}/role_anchor": {
+      "put": {
+        "tags": [
+          "role anchors"
+        ],
+        "summary": "Update Role Anchor",
+        "operationId": "update_role_anchor_api_employees__employee_id__role_anchor_put",
+        "parameters": [
+          {
+            "name": "employee_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Employee Id"
+            }
+          },
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleAnchorWrite"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleAnchorListRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/org_units": {
       "get": {
         "tags": [
@@ -503,6 +650,226 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "organisation units"
+        ],
+        "summary": "Create Org Unit",
+        "operationId": "create_org_unit_api_org_units_post",
+        "parameters": [
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrgUnitCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrgUnitWriteRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/org_units/{unit_id}": {
+      "patch": {
+        "tags": [
+          "organisation units"
+        ],
+        "summary": "Patch Org Unit",
+        "operationId": "patch_org_unit_api_org_units__unit_id__patch",
+        "parameters": [
+          {
+            "name": "unit_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Unit Id"
+            }
+          },
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrgUnitUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrgUnitWriteRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/role_profiles": {
+      "get": {
+        "tags": [
+          "role profiles"
+        ],
+        "summary": "List Role Profiles",
+        "operationId": "list_role_profiles_api_role_profiles_get",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Q"
+            }
+          },
+          {
+            "name": "family",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Family"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "active",
+                "all"
+              ],
+              "type": "string",
+              "default": "active",
+              "title": "Status"
+            }
+          },
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoleProfileListRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/health": {
@@ -540,6 +907,24 @@
   },
   "components": {
     "schemas": {
+      "CapabilityRead": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          }
+        },
+        "type": "object",
+        "required": [
+          "key",
+          "label"
+        ],
+        "title": "CapabilityRead"
+      },
       "CurrentUserRead": {
         "properties": {
           "user_id": {
@@ -613,6 +998,63 @@
           "name"
         ],
         "title": "DepartmentRead"
+      },
+      "DevPersonaListRead": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/DevPersonaRead"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "DevPersonaListRead"
+      },
+      "DevPersonaRead": {
+        "properties": {
+          "username": {
+            "type": "string",
+            "title": "Username"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "organization": {
+            "type": "string",
+            "title": "Organization"
+          },
+          "elevate_roles": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Elevate Roles"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "active",
+              "invited",
+              "disabled"
+            ],
+            "title": "State"
+          }
+        },
+        "type": "object",
+        "required": [
+          "username",
+          "display_name",
+          "organization",
+          "elevate_roles",
+          "state"
+        ],
+        "title": "DevPersonaRead"
       },
       "EmployeeCreate": {
         "properties": {
@@ -1002,14 +1444,20 @@
             "title": "State"
           },
           "email": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Email"
           }
         },
         "type": "object",
         "required": [
-          "state",
-          "email"
+          "state"
         ],
         "title": "IdentityRead"
       },
@@ -1109,6 +1557,53 @@
         ],
         "title": "MeRead"
       },
+      "OrgUnitCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Name"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "department",
+              "team"
+            ],
+            "title": "Kind"
+          },
+          "parent_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Id"
+          },
+          "manager_user_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Manager User Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "name",
+          "kind",
+          "parent_id"
+        ],
+        "title": "OrgUnitCreate"
+      },
       "OrgUnitListRead": {
         "properties": {
           "items": {
@@ -1190,6 +1685,75 @@
         ],
         "title": "OrgUnitRead"
       },
+      "OrgUnitUpdate": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "parent_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Id"
+          },
+          "manager_user_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Manager User Id"
+          },
+          "is_active": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Active"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "OrgUnitUpdate"
+      },
+      "OrgUnitWriteRead": {
+        "properties": {
+          "unit": {
+            "$ref": "#/components/schemas/OrgUnitRead"
+          },
+          "employees_affected": {
+            "type": "integer",
+            "title": "Employees Affected"
+          }
+        },
+        "type": "object",
+        "required": [
+          "unit",
+          "employees_affected"
+        ],
+        "title": "OrgUnitWriteRead"
+      },
       "PaginationRead": {
         "properties": {
           "page": {
@@ -1218,6 +1782,109 @@
         ],
         "title": "PaginationRead"
       },
+      "RoleAnchorHistoryRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "effective_from": {
+            "type": "string",
+            "format": "date",
+            "title": "Effective From"
+          },
+          "effective_to": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective To"
+          },
+          "role_profile": {
+            "$ref": "#/components/schemas/RoleAnchorProfileRead"
+          },
+          "assigned_by": {
+            "$ref": "#/components/schemas/ManagerRead"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "effective_from",
+          "effective_to",
+          "role_profile",
+          "assigned_by",
+          "reason",
+          "created_at"
+        ],
+        "title": "RoleAnchorHistoryRead"
+      },
+      "RoleAnchorListRead": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/RoleAnchorHistoryRead"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "RoleAnchorListRead"
+      },
+      "RoleAnchorProfileRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "ref": {
+            "type": "string",
+            "title": "Ref"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "family": {
+            "type": "string",
+            "title": "Family"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "archived"
+            ],
+            "title": "Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "ref",
+          "title",
+          "family",
+          "status"
+        ],
+        "title": "RoleAnchorProfileRead"
+      },
       "RoleAnchorRead": {
         "properties": {
           "role_profile_id": {
@@ -1241,6 +1908,144 @@
           "effective_from"
         ],
         "title": "RoleAnchorRead"
+      },
+      "RoleAnchorWrite": {
+        "properties": {
+          "role_profile_id": {
+            "type": "string",
+            "title": "Role Profile Id"
+          },
+          "effective_from": {
+            "type": "string",
+            "format": "date",
+            "title": "Effective From"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "role_profile_id",
+          "effective_from"
+        ],
+        "title": "RoleAnchorWrite"
+      },
+      "RoleProfileCompetencyRead": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "label": {
+            "type": "string",
+            "title": "Label"
+          },
+          "required_level": {
+            "type": "integer",
+            "title": "Required Level"
+          }
+        },
+        "type": "object",
+        "required": [
+          "key",
+          "label",
+          "required_level"
+        ],
+        "title": "RoleProfileCompetencyRead"
+      },
+      "RoleProfileListRead": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/RoleProfileRead"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "capabilities": {
+            "items": {
+              "$ref": "#/components/schemas/CapabilityRead"
+            },
+            "type": "array",
+            "title": "Capabilities"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "capabilities"
+        ],
+        "title": "RoleProfileListRead"
+      },
+      "RoleProfileRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "ref": {
+            "type": "string",
+            "title": "Ref"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "family": {
+            "type": "string",
+            "title": "Family"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "archived"
+            ],
+            "title": "Status"
+          },
+          "scale": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Scale"
+          },
+          "competencies": {
+            "items": {
+              "$ref": "#/components/schemas/RoleProfileCompetencyRead"
+            },
+            "type": "array",
+            "title": "Competencies"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "ref",
+          "title",
+          "family",
+          "status",
+          "scale",
+          "competencies"
+        ],
+        "title": "RoleProfileRead"
       },
       "UnitCountsRead": {
         "properties": {
