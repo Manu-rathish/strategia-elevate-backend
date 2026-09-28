@@ -1,0 +1,586 @@
+[
+  {
+    "id": "a7e7f95d-52c3-5664-8bed-7aded6a629b9",
+    "user_id": "78685c78-2c6b-559e-a6d9-0342154b625c",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "hr_admin",
+    "scope_note": null
+  },
+  {
+    "id": "e77c6d62-8d07-5f83-85a5-7c6ad660256f",
+    "user_id": "78685c78-2c6b-559e-a6d9-0342154b625c",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "57af10b2-3ce4-5ec0-ad6d-aa4f7aacd5c8",
+    "user_id": "f2958279-5900-5848-90e7-8a286b5f6244",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "hr_admin",
+    "scope_note": null
+  },
+  {
+    "id": "6846870e-ad18-56b1-9cfd-a6904953934e",
+    "user_id": "f2958279-5900-5848-90e7-8a286b5f6244",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "71d2e5b7-751e-5a13-8b6f-b4b12c957bb8",
+    "user_id": "78685c78-2c6b-559e-a6d9-0342154b625c",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "ward_4b"
+  },
+  {
+    "id": "0f601191-2d26-5182-9d37-10f3e97d2e4f",
+    "user_id": "78685c78-2c6b-559e-a6d9-0342154b625c",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "acquire",
+    "role": "hiring_manager",
+    "scope_note": null
+  },
+  {
+    "id": "5cfce228-c49d-5dc1-a426-aab15c7d025e",
+    "user_id": "fee7226d-057f-5426-92c2-fae11fbdfdd1",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "ward_6"
+  },
+  {
+    "id": "d909efd3-528b-5e44-84eb-1ba79c42e326",
+    "user_id": "fee7226d-057f-5426-92c2-fae11fbdfdd1",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "cc100b60-42f9-5508-b8f3-f3496e70e6a5",
+    "user_id": "015365da-9df8-5886-865f-d437b108ecaf",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "emergency"
+  },
+  {
+    "id": "76168cad-afef-5cd6-b01b-946834c866ed",
+    "user_id": "015365da-9df8-5886-865f-d437b108ecaf",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "532e9946-b60d-56bb-8e92-745f747a1fd9",
+    "user_id": "67a1b6e1-87cb-55d4-8243-f27137406f51",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "ward_2_rehab"
+  },
+  {
+    "id": "142d6f05-fa32-59e7-8bb7-c63963416d97",
+    "user_id": "67a1b6e1-87cb-55d4-8243-f27137406f51",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "7fa397f1-cec9-59fa-9700-8b1bd3bfd13a",
+    "user_id": "f9410111-8318-5faf-88a1-c8ddd4dfd705",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "physio"
+  },
+  {
+    "id": "09c9fbfe-1374-5096-b119-689cd0da59a1",
+    "user_id": "f9410111-8318-5faf-88a1-c8ddd4dfd705",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "302426e8-5d65-5a64-a564-58a5301f179f",
+    "user_id": "8f269adc-312d-5cad-a9d2-20313b63de99",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "occtherapy"
+  },
+  {
+    "id": "fe70d0a7-f729-5cbb-9c64-f91426ea8252",
+    "user_id": "8f269adc-312d-5cad-a9d2-20313b63de99",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "cf2d8f52-2ea7-57c4-8e83-b95da82e0090",
+    "user_id": "60a78c24-2109-5f67-83e0-6486c2726e09",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "aged_res1"
+  },
+  {
+    "id": "88b47242-2b9c-59b2-bfdc-fef4c1d21626",
+    "user_id": "60a78c24-2109-5f67-83e0-6486c2726e09",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "f83462b0-9808-5b83-81f0-56d16c451de6",
+    "user_id": "a44a3f50-a2f6-5e74-b018-5e98a99946be",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "aged_res2"
+  },
+  {
+    "id": "11f7799d-61a8-5435-93d9-0fd5f48845c8",
+    "user_id": "a44a3f50-a2f6-5e74-b018-5e98a99946be",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "ebc47f26-4047-536b-921f-58e47ffa604c",
+    "user_id": "047e1f3e-34b5-530b-9511-9c813884a166",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "aged_community"
+  },
+  {
+    "id": "af33283d-fb13-571c-9968-f190ca3c2a3a",
+    "user_id": "047e1f3e-34b5-530b-9511-9c813884a166",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "aa26279f-2c3c-5800-80f1-e23bb764b58e",
+    "user_id": "5533df81-a412-5bbe-9f98-9ae32d02e984",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "finance"
+  },
+  {
+    "id": "75e911ac-9e16-525d-b140-ed502990df38",
+    "user_id": "5533df81-a412-5bbe-9f98-9ae32d02e984",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "5ca3757c-0405-5613-8ccf-72ebfefb7a91",
+    "user_id": "fe0ff496-1f48-557c-987d-cba4a15c54cf",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "digital"
+  },
+  {
+    "id": "b57092ce-0d12-54f6-bd46-d612b73c9c9a",
+    "user_id": "fe0ff496-1f48-557c-987d-cba4a15c54cf",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "5ae3b25f-c90a-5f11-885e-88b12dbe3bf1",
+    "user_id": "6f41b6c3-8914-5b40-856c-208bf3803d54",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "clin_ed"
+  },
+  {
+    "id": "9ed0d519-061c-5fbf-afa8-ab74a8a33b61",
+    "user_id": "6f41b6c3-8914-5b40-856c-208bf3803d54",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "6779d8b6-cc68-5eb0-8284-399eca18a6b8",
+    "user_id": "cd42fa88-e254-589c-acd0-75668f2e0071",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "9133a347-b5f6-5f1b-8bc2-9c67816b2d68",
+    "user_id": "7fbf8e59-361a-51cb-b059-6ef0671ee55b",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "f21e4464-1189-5080-aa43-f4ef7fb77963",
+    "user_id": "eca0ebef-1398-5168-aada-f3a0d43ee6b4",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "dcf5e7a6-0aa6-5129-a3f9-e231c759a142",
+    "user_id": "1485e351-2ae9-580d-ba4c-b67677b34bc7",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "e82ce8ee-3e6b-577b-a8d0-3bfdafb9c10c",
+    "user_id": "4e536f98-e13a-57aa-ab2e-5725d7d4d6db",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "6b93f76f-70e4-52b8-9e8d-ea902e2a96a7",
+    "user_id": "99720945-2e0c-5aec-bf94-05716ce4d480",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "15016e01-d772-5336-b5ac-85856783f2b7",
+    "user_id": "1354d75c-b918-5e76-b4bc-c26f2b4f7e54",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "d1122732-4301-5512-8245-caaa2cd72197",
+    "user_id": "2a697ddb-f77b-5b63-97c0-4597c367c932",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "5a79a4e2-d061-53a5-8c6e-ab52cef64cf1",
+    "user_id": "754761bf-14ec-593c-a453-3e7e3fcb03a2",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "2584aa4b-1bbc-5acf-99c5-d8e0726e887c",
+    "user_id": "b310922b-5aee-5e3c-a4eb-751cf354a236",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "c4935f2c-80fd-5b29-a857-621d9faf8034",
+    "user_id": "9c5ee348-38fe-5c14-a3f0-04ef2dac727c",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "548c80d5-2588-56e2-b22c-1eb8a3b80c42",
+    "user_id": "56418c66-ba1c-57e5-8f80-56a87622a883",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "51019e37-a136-523e-83bc-f2cbaa7865a0",
+    "user_id": "8f197a55-e810-5b07-acdc-b22105c14a6c",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "4137ffae-da63-5ac5-8168-e68ce2b58936",
+    "user_id": "31849048-663e-51c6-8c64-12097cd5595b",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "2f342683-ec4d-539f-8b34-fd4fc8200cd8",
+    "user_id": "fb757c55-da1f-52df-9c8d-79e1b29527b1",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "c3c5e368-60e4-53e6-9f6b-7917791887f7",
+    "user_id": "5ac23a5d-dd5e-5006-8cec-d3a92c053182",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "5be3df96-9a43-5749-a19e-6e2d1c4caac5",
+    "user_id": "0762931d-e07d-517f-a959-2d71e550fe56",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "74046e7f-32cc-5c98-b9b9-b01d8f9b6b27",
+    "user_id": "0477c5d7-a82d-52f0-a205-b19d925d956a",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "9a107d90-254b-5fee-8db0-57594b365647",
+    "user_id": "d24dfe39-7947-590c-8615-829e6b836170",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "f13c309e-329b-5725-b6e9-08c4df6e91d6",
+    "user_id": "90bacbcf-cff8-5c76-8df5-484534d572de",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "87867f0a-1aec-5bdd-b5e3-0a55a5cafb74",
+    "user_id": "2f0bfd1d-c8b2-59ff-b999-a94d006e233a",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "ef630dc2-83a0-5df0-94f0-c6538c9d666b",
+    "user_id": "53c5883b-1792-5be1-aa8d-7303855a66cf",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "bd0a0e2a-7117-5fef-ad57-e62425c4b892",
+    "user_id": "749159d3-82fd-5c65-bf56-1dac3fbff1b9",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "113994ec-7ea1-57b9-9d19-421f6685b796",
+    "user_id": "349387a8-da69-5f85-ac2b-45e262cb2176",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "9fe7ad3b-1f9b-5576-be99-100452a85fc8",
+    "user_id": "43b8493e-5c4b-5292-a601-7160add29353",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "4368d14e-4bee-53e8-a75e-da0e3d0011da",
+    "user_id": "70e2ab36-63ee-54b0-967d-5d05ba0a4bb8",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "1c2b564c-ff66-533f-a23e-578f3b725aa2",
+    "user_id": "71dfdf40-c8f0-53bf-9eda-c9b391cc3468",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "519fff67-339c-5912-a8dc-ccfc1b356d29",
+    "user_id": "640d9e99-c6c2-529f-8846-e818b151547e",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "e7820a64-bc06-575f-9db1-8ace914ee853",
+    "user_id": "c76c27c1-69eb-5e7d-bd51-d62d4c1a1528",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "313d13ea-47e6-5d5f-ba14-8344cfbf46de",
+    "user_id": "ed381f84-2e0b-52b8-ab8d-da2ea62bde3f",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "b5e9bf8c-496b-579e-b90b-045d94f3deb4",
+    "user_id": "8fd349ac-9aa4-5836-bd24-9eefe4e61932",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "d9d7c78a-1f3d-528a-82c7-b1f8d14d3a57",
+    "user_id": "2d88e0ef-931b-5855-941a-bb4c60c1ef5e",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "faae409f-5a7b-5393-8a21-126c9b22ddfb",
+    "user_id": "0fe24db3-947a-553a-8a5c-a47c4692c3f7",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "26f53266-4f50-5a88-8365-0511ac1bc917",
+    "user_id": "4a5e1931-86a6-5b8f-9059-b52147cc6a46",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "d174c153-6fbc-5554-8ac3-3b45795eeb01",
+    "user_id": "033e6190-3722-5729-badc-f9fde3746140",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "5b2dd2fb-125d-5041-a368-3fbb236bfcba",
+    "user_id": "a5ce3690-5d76-5997-9474-9341277e6fc4",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "140c1afd-76a9-5bf1-b626-a71f32696b3f",
+    "user_id": "470f1cf4-f91b-54e8-9a1e-9db2cfea335d",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "092131e9-e2d6-57b5-aba6-13bbe8b8ee27",
+    "user_id": "4e7b26b7-bd22-5bc4-b673-191db4efc21b",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "c5280041-5803-546d-948c-ac599a0e7a3d",
+    "user_id": "739a7c43-cff2-53d5-ae1d-2ed72fd16eb0",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "d3d69f11-c8df-5164-bc5f-9300b9bacc62",
+    "user_id": "64efe472-5b5e-5b12-8e91-3f42b56b083e",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "01a751f6-72f6-5dd4-9f96-a31d195e929a",
+    "user_id": "e591a371-7a72-5f31-8d31-ffcb5ffdc537",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "pillar": "acquire",
+    "role": "recruiter",
+    "scope_note": null
+  },
+  {
+    "id": "7c03dfc9-2a85-5e65-9cf6-482312127105",
+    "user_id": "d0a8164a-2e0a-5934-a0e7-c1566312aecb",
+    "organization_id": "589105cd-abed-514b-a660-55f064de3c60",
+    "pillar": "elevate",
+    "role": "hr_admin",
+    "scope_note": null
+  },
+  {
+    "id": "b48c4a8a-23b7-5af8-98cf-4684d2f4afd1",
+    "user_id": "d0a8164a-2e0a-5934-a0e7-c1566312aecb",
+    "organization_id": "589105cd-abed-514b-a660-55f064de3c60",
+    "pillar": "elevate",
+    "role": "manager",
+    "scope_note": "nb_home_support"
+  },
+  {
+    "id": "1f11ff01-b3de-5ae3-b781-4c62c07c3198",
+    "user_id": "6289c2bf-a45b-59a7-bcd6-450efcf38230",
+    "organization_id": "589105cd-abed-514b-a660-55f064de3c60",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  },
+  {
+    "id": "871f5a1c-6066-5a1a-8619-37887502bb45",
+    "user_id": "1b4a49cd-69b4-5e47-b898-dafcba43dd22",
+    "organization_id": "589105cd-abed-514b-a660-55f064de3c60",
+    "pillar": "elevate",
+    "role": "employee",
+    "scope_note": "own record"
+  }
+]

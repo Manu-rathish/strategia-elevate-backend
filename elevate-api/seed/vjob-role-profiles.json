@@ -1,0 +1,661 @@
+{
+  "_note": "Fixture behind role_profile_port (A1). Shape is our assumption under open question O1 and is replaced the moment Strategia confirm the real one. Nothing outside the adapter may depend on this file.",
+  "capabilities": [
+    {
+      "key": "clinical_judgement",
+      "label": "Clinical judgement"
+    },
+    {
+      "key": "communication",
+      "label": "Communication"
+    },
+    {
+      "key": "escalation_safety",
+      "label": "Escalation and safety"
+    },
+    {
+      "key": "working_under_pressure",
+      "label": "Working under pressure"
+    },
+    {
+      "key": "mentoring",
+      "label": "Mentoring"
+    },
+    {
+      "key": "digital_records",
+      "label": "Digital records"
+    }
+  ],
+  "role_profiles": [
+    {
+      "id": "276041f4-64c1-5fff-a35f-101ecde12722",
+      "ref": "rn",
+      "title": "Registered nurse",
+      "family": "Nursing",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 80
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 85
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 85
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 80
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 70
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 75
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "e345d359-bee2-5a20-a5d2-bcbb3ef43a7b",
+      "ref": "rn_acute",
+      "title": "Registered nurse (acute)",
+      "family": "Nursing",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 82
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 85
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 88
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 85
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 70
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 75
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "d9049771-905b-5c9c-a948-4c55543eb21b",
+      "ref": "cn",
+      "title": "Clinical nurse",
+      "family": "Nursing",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 85
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 85
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 88
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 85
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 80
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 78
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "6b20de22-f1e4-5a68-93d8-fc0e0fdac006",
+      "ref": "en",
+      "title": "Enrolled nurse",
+      "family": "Nursing",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 70
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 80
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 75
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 75
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 60
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 70
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "87b3153f-ef55-58ac-8aa1-e4722a969ee8",
+      "ref": "num",
+      "title": "Nurse unit manager",
+      "family": "Nursing",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 85
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 90
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 88
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 85
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 88
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 80
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "d00c27e1-dd50-5e8a-a395-082ddecb8791",
+      "ref": "educator",
+      "title": "Clinical educator",
+      "family": "Nursing",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 82
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 90
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 80
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 75
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 92
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 80
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "8974aefe-cac0-539e-a7ba-b30953321c4a",
+      "ref": "physio",
+      "title": "Physiotherapist",
+      "family": "Allied health",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 80
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 85
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 75
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 70
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 70
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 75
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "3a7dcb38-828c-5b78-a9c2-4d69cc8ab4cf",
+      "ref": "ot",
+      "title": "Occupational therapist",
+      "family": "Allied health",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 78
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 85
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 72
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 70
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 72
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 75
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "73a55691-c995-5bd8-b414-b0ad4b21d3f2",
+      "ref": "careco",
+      "title": "Care coordinator",
+      "family": "Aged care",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 75
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 85
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 75
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 75
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 65
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 70
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "80fd075c-8358-5440-b9fe-b309d2e20431",
+      "ref": "pca",
+      "title": "Personal care assistant",
+      "family": "Aged care",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 65
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 80
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 70
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 72
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 55
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 60
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "314c8ee9-b649-5fc4-8344-215a8be11408",
+      "ref": "fin",
+      "title": "Finance analyst",
+      "family": "Corporate",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 70
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 75
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 65
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 65
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 65
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 85
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "41de594a-7e46-566e-bc5e-a5ff4c81da07",
+      "ref": "ppl",
+      "title": "People and culture advisor",
+      "family": "Corporate",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 72
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 88
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 70
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 70
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 75
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 82
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "64b4e862-d96e-5d33-97a1-33139560b784",
+      "ref": "data",
+      "title": "Data analyst",
+      "family": "Corporate",
+      "status": "active",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 68
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 78
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 62
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 68
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 62
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 92
+        }
+      ],
+      "source": "V-Job"
+    },
+    {
+      "id": "36ee7cd1-5773-52f8-b354-0347a63508c7",
+      "ref": "en_2023",
+      "title": "Enrolled nurse (2023 profile)",
+      "family": "Nursing",
+      "status": "archived",
+      "scale": {
+        "min": 0,
+        "max": 100,
+        "kind": "required_level"
+      },
+      "competencies": [
+        {
+          "key": "clinical_judgement",
+          "label": "Clinical judgement",
+          "required_level": 68
+        },
+        {
+          "key": "communication",
+          "label": "Communication",
+          "required_level": 78
+        },
+        {
+          "key": "escalation_safety",
+          "label": "Escalation and safety",
+          "required_level": 72
+        },
+        {
+          "key": "working_under_pressure",
+          "label": "Working under pressure",
+          "required_level": 72
+        },
+        {
+          "key": "mentoring",
+          "label": "Mentoring",
+          "required_level": 58
+        },
+        {
+          "key": "digital_records",
+          "label": "Digital records",
+          "required_level": 62
+        }
+      ],
+      "source": "V-Job"
+    }
+  ]
+}

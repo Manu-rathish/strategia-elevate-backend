@@ -1,0 +1,233 @@
+[
+  {
+    "id": "ecf408b9-5e42-5986-b54c-bb231a2dcdd2",
+    "ref": "nursing",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Nursing",
+    "kind": "department",
+    "parent_id": null,
+    "manager_user_id": null,
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "c90ed0dc-fcc4-51b5-93cc-d29e67131dd5",
+    "ref": "allied",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Allied health",
+    "kind": "department",
+    "parent_id": null,
+    "manager_user_id": null,
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "a1c081de-d661-5ce0-9612-6d9b1d73879e",
+    "ref": "agedcare",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Aged care",
+    "kind": "department",
+    "parent_id": null,
+    "manager_user_id": null,
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "f68e3a4e-8f03-55ca-a431-2908d044eb2e",
+    "ref": "corporate",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Corporate",
+    "kind": "department",
+    "parent_id": null,
+    "manager_user_id": null,
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "b88f125f-5823-5614-9c24-8a66a487109f",
+    "ref": "education",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Education",
+    "kind": "department",
+    "parent_id": null,
+    "manager_user_id": null,
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "46f46507-7617-56d2-bb08-60d8b83d247e",
+    "ref": "ward_4b",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Ward 4B nursing",
+    "kind": "team",
+    "parent_id": "ecf408b9-5e42-5986-b54c-bb231a2dcdd2",
+    "manager_user_id": "78685c78-2c6b-559e-a6d9-0342154b625c",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "1c050ff4-d261-5f13-8942-fc839febd39f",
+    "ref": "ward_6",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Ward 6 nursing",
+    "kind": "team",
+    "parent_id": "ecf408b9-5e42-5986-b54c-bb231a2dcdd2",
+    "manager_user_id": "fee7226d-057f-5426-92c2-fae11fbdfdd1",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "af197a94-d2d7-53cd-b08f-cd0a65b6a156",
+    "ref": "emergency",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Emergency nursing",
+    "kind": "team",
+    "parent_id": "ecf408b9-5e42-5986-b54c-bb231a2dcdd2",
+    "manager_user_id": "015365da-9df8-5886-865f-d437b108ecaf",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "5030bb1c-e8e4-53a7-b27a-24143d8b91e4",
+    "ref": "ward_2_rehab",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Ward 2 rehabilitation",
+    "kind": "team",
+    "parent_id": "ecf408b9-5e42-5986-b54c-bb231a2dcdd2",
+    "manager_user_id": "67a1b6e1-87cb-55d4-8243-f27137406f51",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "5554e61a-2326-59e3-bb45-a9e418053d21",
+    "ref": "ward_9",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Ward 9 nursing (opening)",
+    "kind": "team",
+    "parent_id": "ecf408b9-5e42-5986-b54c-bb231a2dcdd2",
+    "manager_user_id": "fee7226d-057f-5426-92c2-fae11fbdfdd1",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "4a52fcd1-4ef0-5076-82e0-a66eb619e7da",
+    "ref": "physio",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Physiotherapy",
+    "kind": "team",
+    "parent_id": "c90ed0dc-fcc4-51b5-93cc-d29e67131dd5",
+    "manager_user_id": "f9410111-8318-5faf-88a1-c8ddd4dfd705",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "2d988dde-449e-51d0-be1a-e0bfe276cd3e",
+    "ref": "occtherapy",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Occupational therapy",
+    "kind": "team",
+    "parent_id": "c90ed0dc-fcc4-51b5-93cc-d29e67131dd5",
+    "manager_user_id": "8f269adc-312d-5cad-a9d2-20313b63de99",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "e5b11551-079e-5671-9575-6e3188816ad6",
+    "ref": "aged_res1",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Aged care - residential 1",
+    "kind": "team",
+    "parent_id": "a1c081de-d661-5ce0-9612-6d9b1d73879e",
+    "manager_user_id": "60a78c24-2109-5f67-83e0-6486c2726e09",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "cdc7bffd-41e1-51b1-8ff6-e18ad09a16f1",
+    "ref": "aged_res2",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Aged care - residential 2",
+    "kind": "team",
+    "parent_id": "a1c081de-d661-5ce0-9612-6d9b1d73879e",
+    "manager_user_id": "a44a3f50-a2f6-5e74-b018-5e98a99946be",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "bbce7c3c-43cf-5cbb-9c29-221741b23599",
+    "ref": "aged_community",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Aged care - community",
+    "kind": "team",
+    "parent_id": "a1c081de-d661-5ce0-9612-6d9b1d73879e",
+    "manager_user_id": "047e1f3e-34b5-530b-9511-9c813884a166",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "76d8e185-aa1c-57eb-ab48-4069b8f46fed",
+    "ref": "finance",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Finance",
+    "kind": "team",
+    "parent_id": "f68e3a4e-8f03-55ca-a431-2908d044eb2e",
+    "manager_user_id": "5533df81-a412-5bbe-9f98-9ae32d02e984",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "ed14257f-aec0-5697-8386-b8e6ddfb6677",
+    "ref": "people",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "People and culture",
+    "kind": "team",
+    "parent_id": "f68e3a4e-8f03-55ca-a431-2908d044eb2e",
+    "manager_user_id": "f2958279-5900-5848-90e7-8a286b5f6244",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "68fe74ac-f69e-501a-b6ee-249761c5a6e0",
+    "ref": "digital",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Digital and data",
+    "kind": "team",
+    "parent_id": "f68e3a4e-8f03-55ca-a431-2908d044eb2e",
+    "manager_user_id": "fe0ff496-1f48-557c-987d-cba4a15c54cf",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "91d42b0d-19b7-5221-ac11-58d011b352aa",
+    "ref": "clin_ed",
+    "organization_id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "name": "Clinical education",
+    "kind": "team",
+    "parent_id": "b88f125f-5823-5614-9c24-8a66a487109f",
+    "manager_user_id": "6f41b6c3-8914-5b40-856c-208bf3803d54",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "43e01543-99d6-5e43-894a-f76102c46479",
+    "ref": "nb_community",
+    "organization_id": "589105cd-abed-514b-a660-55f064de3c60",
+    "name": "Community services",
+    "kind": "department",
+    "parent_id": null,
+    "manager_user_id": null,
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  },
+  {
+    "id": "4f707c96-595c-56b8-8fa1-c1af28c71034",
+    "ref": "nb_home_support",
+    "organization_id": "589105cd-abed-514b-a660-55f064de3c60",
+    "name": "Home support",
+    "kind": "team",
+    "parent_id": "43e01543-99d6-5e43-894a-f76102c46479",
+    "manager_user_id": "d0a8164a-2e0a-5934-a0e7-c1566312aecb",
+    "is_active": true,
+    "created_at": "2026-08-03T09:00:00Z"
+  }
+]

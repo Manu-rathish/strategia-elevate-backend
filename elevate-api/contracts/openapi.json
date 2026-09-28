@@ -1,0 +1,1354 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Elevate Employee API",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/me": {
+      "get": {
+        "tags": [
+          "current user"
+        ],
+        "summary": "Get Me",
+        "operationId": "get_me_api_me_get",
+        "parameters": [
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/employees": {
+      "get": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "List Employees",
+        "operationId": "list_employees_api_employees_get",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Q"
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "active,on_leave",
+              "title": "Status"
+            }
+          },
+          {
+            "name": "org_unit_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Org Unit Id"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "name",
+                "employee_number",
+                "started_on"
+              ],
+              "type": "string",
+              "default": "name",
+              "title": "Sort"
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "default": "asc",
+              "title": "Order"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1,
+              "title": "Page"
+            }
+          },
+          {
+            "name": "page_size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 25,
+              "title": "Page Size"
+            }
+          },
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeListRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Create Employee",
+        "operationId": "create_employee_api_employees_post",
+        "parameters": [
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/employees/{employee_id}": {
+      "get": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Get Employee",
+        "operationId": "get_employee_api_employees__employee_id__get",
+        "parameters": [
+          {
+            "name": "employee_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Employee Id"
+            }
+          },
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Update Employee",
+        "operationId": "update_employee_api_employees__employee_id__patch",
+        "parameters": [
+          {
+            "name": "employee_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Employee Id"
+            }
+          },
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmployeeUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmployeeRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/employees/{employee_id}/lifecycle": {
+      "post": {
+        "tags": [
+          "employees"
+        ],
+        "summary": "Update Lifecycle",
+        "operationId": "update_lifecycle_api_employees__employee_id__lifecycle_post",
+        "parameters": [
+          {
+            "name": "employee_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Employee Id"
+            }
+          },
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LifecycleUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LifecycleResultRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/org_units": {
+      "get": {
+        "tags": [
+          "organisation units"
+        ],
+        "summary": "List Org Units",
+        "operationId": "list_org_units_api_org_units_get",
+        "parameters": [
+          {
+            "name": "include_counts",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": true,
+              "title": "Include Counts"
+            }
+          },
+          {
+            "name": "x-dev-user",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "X-Dev-User"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrgUnitListRead"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "health"
+        ],
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "type": "object",
+                  "title": "Response Health Health Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CurrentUserRead": {
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "title": "User Id"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "organization_id": {
+            "type": "string",
+            "title": "Organization Id"
+          },
+          "role": {
+            "type": "string",
+            "title": "Role"
+          },
+          "elevate_roles": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Elevate Roles"
+          },
+          "managed_unit_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Managed Unit Ids"
+          },
+          "employee_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Employee Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "user_id",
+          "display_name",
+          "organization_id",
+          "role",
+          "elevate_roles",
+          "managed_unit_ids",
+          "employee_id"
+        ],
+        "title": "CurrentUserRead"
+      },
+      "DepartmentRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "title": "DepartmentRead"
+      },
+      "EmployeeCreate": {
+        "properties": {
+          "employee_number": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Employee Number"
+          },
+          "first_name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "First Name"
+          },
+          "last_name": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Last Name"
+          },
+          "work_email": {
+            "type": "string",
+            "minLength": 3,
+            "title": "Work Email"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "on_leave",
+              "exited"
+            ],
+            "title": "Status",
+            "default": "active"
+          },
+          "started_on": {
+            "type": "string",
+            "format": "date",
+            "title": "Started On"
+          },
+          "exited_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exited On"
+          },
+          "org_unit_id": {
+            "type": "string",
+            "title": "Org Unit Id"
+          },
+          "candidate_assessment_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Candidate Assessment Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "employee_number",
+          "first_name",
+          "last_name",
+          "work_email",
+          "started_on",
+          "org_unit_id"
+        ],
+        "title": "EmployeeCreate"
+      },
+      "EmployeeListRead": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/EmployeeRead"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/PaginationRead"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/EmployeeSummaryRead"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "pagination",
+          "summary"
+        ],
+        "title": "EmployeeListRead"
+      },
+      "EmployeeOrgUnitRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "department",
+              "team"
+            ],
+            "title": "Kind"
+          },
+          "department": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DepartmentRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "department"
+        ],
+        "title": "EmployeeOrgUnitRead"
+      },
+      "EmployeeRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "employee_number": {
+            "type": "string",
+            "title": "Employee Number"
+          },
+          "first_name": {
+            "type": "string",
+            "title": "First Name"
+          },
+          "last_name": {
+            "type": "string",
+            "title": "Last Name"
+          },
+          "full_name": {
+            "type": "string",
+            "title": "Full Name"
+          },
+          "work_email": {
+            "type": "string",
+            "title": "Work Email"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "on_leave",
+              "exited"
+            ],
+            "title": "Status"
+          },
+          "started_on": {
+            "type": "string",
+            "format": "date",
+            "title": "Started On"
+          },
+          "exited_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exited On"
+          },
+          "org_unit": {
+            "$ref": "#/components/schemas/EmployeeOrgUnitRead"
+          },
+          "role_anchor": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/RoleAnchorRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "manager": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ManagerRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "is_manager": {
+            "type": "boolean",
+            "title": "Is Manager"
+          },
+          "identity": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IdentityRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "candidate_assessment_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Candidate Assessment Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "employee_number",
+          "first_name",
+          "last_name",
+          "full_name",
+          "work_email",
+          "status",
+          "started_on",
+          "exited_on",
+          "org_unit",
+          "role_anchor",
+          "manager",
+          "is_manager",
+          "created_at"
+        ],
+        "title": "EmployeeRead"
+      },
+      "EmployeeSummaryRead": {
+        "properties": {
+          "active": {
+            "type": "integer",
+            "title": "Active"
+          },
+          "on_leave": {
+            "type": "integer",
+            "title": "On Leave"
+          },
+          "exited": {
+            "type": "integer",
+            "title": "Exited"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          }
+        },
+        "type": "object",
+        "required": [
+          "active",
+          "on_leave",
+          "exited",
+          "total"
+        ],
+        "title": "EmployeeSummaryRead"
+      },
+      "EmployeeUpdate": {
+        "properties": {
+          "first_name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "First Name"
+          },
+          "last_name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Name"
+          },
+          "work_email": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 3
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Work Email"
+          },
+          "org_unit_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Org Unit Id"
+          },
+          "started_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Started On"
+          },
+          "candidate_assessment_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Candidate Assessment Id"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "EmployeeUpdate"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "IdentityRead": {
+        "properties": {
+          "state": {
+            "type": "string",
+            "title": "State"
+          },
+          "email": {
+            "type": "string",
+            "title": "Email"
+          }
+        },
+        "type": "object",
+        "required": [
+          "state",
+          "email"
+        ],
+        "title": "IdentityRead"
+      },
+      "LifecycleResultRead": {
+        "properties": {
+          "employee": {
+            "$ref": "#/components/schemas/EmployeeRead"
+          },
+          "warnings": {
+            "items": {
+              "$ref": "#/components/schemas/WarningRead"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "type": "object",
+        "required": [
+          "employee",
+          "warnings"
+        ],
+        "title": "LifecycleResultRead"
+      },
+      "LifecycleUpdate": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "on_leave",
+              "exited"
+            ],
+            "title": "Status"
+          },
+          "effective_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective On"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "LifecycleUpdate"
+      },
+      "ManagerRead": {
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "title": "User Id"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "user_id",
+          "display_name"
+        ],
+        "title": "ManagerRead"
+      },
+      "MeRead": {
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/CurrentUserRead"
+          },
+          "employee": {
+            "$ref": "#/components/schemas/EmployeeRead"
+          }
+        },
+        "type": "object",
+        "required": [
+          "user",
+          "employee"
+        ],
+        "title": "MeRead"
+      },
+      "OrgUnitListRead": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/OrgUnitRead"
+            },
+            "type": "array",
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items"
+        ],
+        "title": "OrgUnitListRead"
+      },
+      "OrgUnitRead": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "department",
+              "team"
+            ],
+            "title": "Kind"
+          },
+          "parent_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parent Id"
+          },
+          "manager": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UnitManagerRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "is_active": {
+            "type": "boolean",
+            "title": "Is Active"
+          },
+          "counts": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UnitCountsRead"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "parent_id",
+          "manager",
+          "is_active"
+        ],
+        "title": "OrgUnitRead"
+      },
+      "PaginationRead": {
+        "properties": {
+          "page": {
+            "type": "integer",
+            "title": "Page"
+          },
+          "page_size": {
+            "type": "integer",
+            "title": "Page Size"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "total_pages": {
+            "type": "integer",
+            "title": "Total Pages"
+          }
+        },
+        "type": "object",
+        "required": [
+          "page",
+          "page_size",
+          "total",
+          "total_pages"
+        ],
+        "title": "PaginationRead"
+      },
+      "RoleAnchorRead": {
+        "properties": {
+          "role_profile_id": {
+            "type": "string",
+            "title": "Role Profile Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "effective_from": {
+            "type": "string",
+            "format": "date",
+            "title": "Effective From"
+          }
+        },
+        "type": "object",
+        "required": [
+          "role_profile_id",
+          "title",
+          "effective_from"
+        ],
+        "title": "RoleAnchorRead"
+      },
+      "UnitCountsRead": {
+        "properties": {
+          "active": {
+            "type": "integer",
+            "title": "Active"
+          },
+          "on_leave": {
+            "type": "integer",
+            "title": "On Leave"
+          },
+          "exited": {
+            "type": "integer",
+            "title": "Exited"
+          },
+          "total_visible": {
+            "type": "integer",
+            "title": "Total Visible"
+          }
+        },
+        "type": "object",
+        "required": [
+          "active",
+          "on_leave",
+          "exited",
+          "total_visible"
+        ],
+        "title": "UnitCountsRead"
+      },
+      "UnitManagerRead": {
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "title": "User Id"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "user_id",
+          "display_name"
+        ],
+        "title": "UnitManagerRead"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "WarningRead": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "org_unit_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Org Unit Ids"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "org_unit_ids"
+        ],
+        "title": "WarningRead"
+      }
+    }
+  }
+}

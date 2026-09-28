@@ -1,0 +1,18 @@
+[
+  {
+    "id": "41df3856-7513-5966-b593-97adaaee3b61",
+    "ref": "stagnes",
+    "name": "St Agnes Health",
+    "email_domain": "stagnes.health.example",
+    "is_demo_primary": true,
+    "note": "Primary demo tenant. Every screen and every happy path runs here."
+  },
+  {
+    "id": "589105cd-abed-514b-a660-55f064de3c60",
+    "ref": "northbay",
+    "name": "Northbay Community Care",
+    "email_domain": "northbay.example",
+    "is_demo_primary": false,
+    "note": "Isolation tenant. Exists so a cross-tenant read has something to fail against (L10). Never shown in a demo."
+  }
+]
